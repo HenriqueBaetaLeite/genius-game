@@ -31,10 +31,10 @@ const lightColor = (element, number) => {
   }, number - 250);
   setTimeout(() => {
     element.classList.toggle('selected');
-  },500);
+  }, 500);
 };
 
-// checa se os botões clicados são os mesmo da ordem gerada no jogo
+// checa se os botões clicados são os mesmos da ordem gerada no jogo
 const checkOrder = () => {
   for (let i in clickedOrder) {
     if (clickedOrder[i] != order[i]) {
@@ -44,7 +44,7 @@ const checkOrder = () => {
   }
   if (clickedOrder.length == order.length) {
     alert(`Pontuação: ${score}\nVocê acertou! Iniciando próximo nível!`);
-    nextLevel();
+    setTimeout(() => nextLevel(), 1500);
   }
 };
 
@@ -93,7 +93,7 @@ const gameOver = () => {
 // função que inicia o jogo
 
 const playGame = () => {
-  alert(`Boas vindas ao game de memória Gens!\nIniciando novo jogo...`);
+  alert(`Boas vindas ao game de memória!\nIniciando novo jogo aguarde...`);
   score = 0;
 
   nextLevel();
